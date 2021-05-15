@@ -20,14 +20,22 @@
 %% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 %% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 %% SOFTWARE.
+%%
+%% -----------------------------------------------------------------------------
+%%
+%% The original 1.x versions of the CTAN package were developed by
+%% Dániel Majoros, under the LaTeX Project Public License version 1.2 or later.
+%% This updated work is a complete rewrite with no connection
+%% to the original package.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{elteikthesis}[2020/11/23 ELTE FI bachelor and master thesis template]
+\ProvidesClass{elteikthesis}[2020/05/15 ELTE FI bachelor and master thesis template]
 
 % LaTeX programozói eszközök
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}
 \RequirePackage{ifthen}
+\usepackage{pdfpages} 
 
 % ------------------------------
 % Paraméterek feldolgozása
@@ -88,27 +96,27 @@
 	% Magyar
 	\ifthenelse{\equal{\detokenize{#1}}{\detokenize{magyar}}}
 	{
-		\newcommand{\authorlabel}{Szerző}
-		\newcommand{\suplabel}{Témavezető}
-		\newcommand{\intsuplabel}{Belső témavezető}
-		\newcommand{\extsuplabel}{Külső témavezető}
+		\newcommand{\authorlabel}{Author}
+		\newcommand{\suplabel}{Supervisor}
+		\newcommand{\intsuplabel}{Internal supervisor}
+		\newcommand{\extsuplabel}{External supervisor}
 
-		\newcommand{\deflabel}{Definíció}
-		\newcommand{\theolabel}{Tétel}
-		\newcommand{\remlabel}{Emlékeztető}
-		\newcommand{\notelabel}{Megjegyzés}
+		\newcommand{\deflabel}{Definition}
+		\newcommand{\theolabel}{Theorem}
+		\newcommand{\remlabel}{Remark}
+		\newcommand{\notelabel}{Note}
 
-		\newcommand{\codelabel}{forráskód}
-		\newcommand{\alglabel}{Algoritmus}
+		\newcommand{\codelabel}{Code}
+		\newcommand{\alglabel}{Algorithm}
 
-		\newcommand{\biblabel}{Irodalomjegyzék}
-		\newcommand{\lstfigurelabel}{Ábrajegyzék}
-		\newcommand{\lsttablelabel}{Táblázatjegyzék}
-		\newcommand{\lstcodelabel}{Forráskódjegyzék}
-		\newcommand{\lstnomencl}{Jelölésjegyzék}
-		\newcommand{\todolabel}{Teendők listája}
+		\newcommand{\biblabel}{Bibliography}
+		\newcommand{\lstfigurelabel}{List of Figures}
+		\newcommand{\lsttablelabel}{List of Tables}
+		\newcommand{\lstcodelabel}{List of Codes}
+		\newcommand{\lstnomencl}{List of Symbols}
+		\newcommand{\todolabel}{Todo list}
 
-		\newcommand{\declarationplaceholder}{Az eredeti szakdolgozati / diplomamunka témabejelentő helye.}
+		\newcommand{\declarationplaceholder}{This page should be the original Thesis Topic Declaration.}
 	}
 	{ % Angol
 		\newcommand{\authorlabel}{Author}
@@ -315,7 +323,7 @@
 % pdflatex-hez
 \newcommand{\hyperrefComp}{}
 
-\RequirePackage[pdfborder={0 0 0}, unicode, pdfusetitle, \hyperrefComp]{hyperref}
+\RequirePackage[pdfborder={0 0 0}, unicode, \hyperrefComp]{hyperref}
 \RequirePackage[all]{hypcap}
 \RequirePackage{url}
 \RequirePackage{bookmark}

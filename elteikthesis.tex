@@ -1,0 +1,111 @@
+\documentclass[
+	%parspace, % Add vertical space between paragraphs
+	%noindent, No indentation of first lines in each paragraph
+	%nohyp,  No hyphenation of words
+	%twoside, Double sided format
+    %final, Set final to hide todos
+]{elteikthesis}[2020/05/15]
+
+
+% Document's metadata
+\title{Finding Security Vulnerabilities with Static Code Analysis} %  title
+\date{2021} % védés éve / year of defense
+
+% Author's metadata
+\author{Tsinadze Zurab}
+\degree{Computer Science BSc}
+
+% Superivsor(s)' metadata
+\supervisor{Porkoláb Zoltán} % internal supervisor's name
+\affiliation{Associate Professor, PhD} %  internal supervisor's affiliation
+
+% Egyetem metaadatai
+% University's metadata
+\university{Eötvös Loránd University} %  university's name
+\faculty{Faculty of Informatics} %  faculty's name
+\department{Department of Programming Languages \\ and Compilers} %  department's name
+\city{Budapest} %  city
+\logo{elte_cimer_szines} % logo
+
+
+% Add bibliography file
+\addbibresource{elteikthesis.bib}
+
+
+% The document
+\begin{document}
+
+
+% Set document language
+% \documentlang{magyar}
+\documentlang{english}
+
+% List of todos (not in the final document)
+% \listoftodos[\todolabel]
+% \begin{itemize}
+%     \item gsd todos
+%     \item write summary part
+%     \item Try to keep code snippets on one page
+%     \item more tests
+% \end{itemize}
+
+
+% Some document settings
+\input{settings.tex}
+
+
+% Title page (mandatory)
+\maketitle
+\includepdf[pages=-]{Thesis_declaration.pdf}
+% \topicdeclaration
+
+
+% Table of contents (mandatory)
+\tableofcontents
+\cleardoublepage
+
+
+% Main content
+\input{chapters/intro.tex}
+\cleardoublepage
+
+\input{chapters/user.tex}
+\cleardoublepage
+
+\input{chapters/impl.tex}
+\cleardoublepage
+
+\input{chapters/sum.tex}
+\cleardoublepage
+
+% % Appendices (optional) - useful for detailed information in long tables, many and/or large figures, etc.
+\appendix
+\input{appendices/sim.tex}
+\cleardoublepage
+
+% Bibliography (mandatory)
+\addcontentsline{toc}{chapter}{\biblabel}
+\printbibliography[title=\biblabel]
+\cleardoublepage
+
+% % List of figures (optional) - useful over 3-5 figures
+\addcontentsline{toc}{chapter}{\lstfigurelabel}
+\listoffigures
+\cleardoublepage
+
+% % List of tables (optional) - useful over 3-5 tables
+\addcontentsline{toc}{chapter}{\lsttablelabel}
+\listoftables
+\cleardoublepage
+
+% % List of codes (optional) - useful over 3-5 code samples
+% \addcontentsline{toc}{chapter}{\lstcodelabel}
+% \lstlistoflistings
+% \cleardoublepage
+
+% List of symbols (optional)
+%\printnomenclature
+
+\end{document}
+    %final, Set final to hide todos
+
